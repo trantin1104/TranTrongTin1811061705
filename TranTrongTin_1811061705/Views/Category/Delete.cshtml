@@ -1,0 +1,21 @@
+﻿@model TranTrongTin_1811061705.Models.Category
+
+@{
+    ViewData["Title"] = "Xóa danh mục";
+}
+
+<div class="features-title text-center">
+    <h2>XÓA DANH MỤC</h2>
+</div>
+
+<div class="alert alert-warning text-center">
+    <p>Bạn có chắc chắn muốn xóa danh mục này không?</p>
+    <h4 class="text-primary">Tên danh mục: @Model.Name</h4>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post" class="text-center">
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>
