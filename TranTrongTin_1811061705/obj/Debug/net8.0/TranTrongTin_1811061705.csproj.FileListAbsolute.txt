@@ -292,3 +292,4 @@ C:\Users\tynco\source\repos\TranTrongTin_1811061705\TranTrongTin_1811061705\obj\
 C:\Users\tynco\source\repos\TranTrongTin_1811061705\TranTrongTin_1811061705\obj\Debug\net8.0\TranTrongTin_1811061705.genruntimeconfig.cache
 C:\Users\tynco\source\repos\TranTrongTin_1811061705\TranTrongTin_1811061705\obj\Debug\net8.0\ref\TranTrongTin_1811061705.dll
 C:\Users\tynco\source\repos\TranTrongTin_1811061705\TranTrongTin_1811061705\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\tynco\source\repos\TranTrongTin_1811061705\TranTrongTin_1811061705\obj\Debug\net8.0\TranTrongTin_1811061705.sourcelink.json

@@ -4,53 +4,34 @@
     ViewData["Title"] = "Danh sách sản phẩm";
 }
 
-<div class="features-title text-center">
-    <h2>DANH SÁCH SẢN PHẨM</h2>
+<div class="features-title">FEATURED ITEMS</div>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Price.ToString("N0") VNĐ</p>
+
+                    <div class="d-flex gap-2">
+                        <a href="/Product/Detail/@product.Id" class="btn btn-primary">Xem chi tiết</a>
+
+                        <form asp-action="Add" asp-controller="Cart" method="post">
+                            <input type="hidden" name="productId" value="@product.Id">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    }
 </div>
 
-<a asp-action="Add" class="btn btn-primary">Thêm sản phẩm</a>
-
-<table class="table table-bordered mt-3">
-    <thead>
-
-        <tr>
-            <th>ID</th>
-            <th>Ảnh</th>
-            <th>Tên sản phẩm</th>
-            <th>Danh mục</th>
-            <th>Giá</th>
-            <th>Mô tả</th>
-            <th>Hành động</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var product in Model)
-        {
-            <tr>
-                <td>@product.Id</td>
-
-                <td>
-                    <img src="@product.ImageUrl" alt="Ảnh sản phẩm" style="width: 80px; height: 80px; object-fit: cover;" />
-                </td>
-
-                <td>@product.Name</td>
-
-                <td>@(product.Category != null ? product.Category.Name : "Không có")</td>
-
-                <td>@product.Price.ToString("N0") VNĐ</td>
-
-                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;" title="@product.Description">
-                    @(string.IsNullOrEmpty(product.Description) ? "Không có mô tả" : product.Description)
-                </td>
-
-
-                <td>
-                    <a asp-action="Display" asp-route-id="@product.Id" class="btn btn-info">Chi tiết</a>
-                    <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-warning">Sửa</a>
-                    <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger"
-                       onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?');">Xóa</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>

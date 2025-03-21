@@ -8,7 +8,8 @@
     <h2>THÊM SẢN PHẨM</h2>
 </div>
 
-<form asp-action="Add" method="post" enctype="multipart/form-data" class="container mt-3">
+<form asp-area="Admin" asp-controller="Product" asp-action="Add" method="post" enctype="multipart/form-data" class="container mt-3">
+
     <div class="mb-3">
         <label class="form-label">Tên sản phẩm</label>
         <input asp-for="Name" class="form-control" required />

@@ -8,7 +8,9 @@
     <h2>DANH SÁCH SẢN PHẨM</h2>
 </div>
 
-<a asp-action="Add" class="btn btn-primary">Thêm sản phẩm</a>
+<a asp-area="Admin" asp-controller="Product" asp-action="Add" class="btn btn-primary">Thêm sản phẩm</a>
+
+
 
 <table class="table table-bordered mt-3">
     <thead>
@@ -45,9 +47,11 @@
 
 
                 <td>
-                    <a asp-action="Display" asp-route-id="@product.Id" class="btn btn-info">Chi tiết</a>
-                    <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-warning">Sửa</a>
-                    <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger"
+                    <a asp-area="Admin" asp-controller="Product" asp-action="Display" asp-route-id="@product.Id" class="btn btn-info">Chi tiết</a>
+
+                    <a asp-area="Admin" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-warning">Sửa</a>
+
+                    <a asp-area="Admin" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger"
                        onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này không?');">Xóa</a>
                 </td>
             </tr>

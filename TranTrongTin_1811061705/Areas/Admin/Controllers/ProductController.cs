@@ -8,6 +8,7 @@ namespace TranTrongTin_1811061705.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Authorize(Roles = SD.Role_Admin)]
+
     public class ProductController : Controller
     {
 
