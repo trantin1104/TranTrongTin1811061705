@@ -20,12 +20,14 @@
                     <div class="d-flex gap-2">
                         <a href="/Product/Detail/@product.Id" class="btn btn-primary">Xem chi tiết</a>
 
-                        <form asp-action="Add" asp-controller="Cart" method="post">
+                        <form asp-action="AddToCart" asp-controller="ShoppingCart" method="post">
                             <input type="hidden" name="productId" value="@product.Id">
+                            <input type="hidden" name="quantity" value="1"> <!-- Mặc định số lượng là 1 -->
                             <button type="submit" class="btn btn-danger">
                                 <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ
                             </button>
                         </form>
+
                     </div>
 
                 </div>

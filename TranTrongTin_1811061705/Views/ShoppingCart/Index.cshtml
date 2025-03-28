@@ -1,0 +1,57 @@
+﻿@model TranTrongTin_1811061705.Models.ShoppingCart
+
+@{
+    ViewData["Title"] = "Giỏ hàng";
+}
+
+<h2 class="text-center">🛒 Giỏ hàng của bạn</h2>
+
+@if (Model.Items.Any())
+{
+    <table class="table table-bordered mt-4">
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Items.Count; i++)
+            {
+                var item = Model.Items[i];
+                <tr>
+                    <td>@(i + 1)</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price.ToString("N0") VNĐ</td>
+                    <td>@item.Quantity</td>
+                    <td>@($"{(item.Price * item.Quantity):N0} VNĐ")</td>
+
+                    <td>
+                        <a asp-controller="ShoppingCart" asp-action="RemoveFromCart" asp-route-productId="@item.ProductId" class="btn btn-danger btn-sm">
+                            ❌ Xóa
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    
+
+    <div class="text-center mt-4">
+        <a asp-controller="ShoppingCart" asp-action="ClearCart" class="btn btn-warning">🗑️ Xóa toàn bộ giỏ hàng</a>
+        <a href="/" class="btn btn-primary">🏠 Tiếp tục mua sắm</a>
+        <a asp-controller="ShoppingCart" asp-action="Checkout" class="btn btn-success">💳 Thanh toán</a>
+    </div>
+}
+else
+{
+    <div class="alert alert-info text-center mt-4">
+        <h4>🛒 Giỏ hàng trống!</h4>
+        <a href="/" class="btn btn-success">🔄 Quay lại mua hàng</a>
+    </div>
+}

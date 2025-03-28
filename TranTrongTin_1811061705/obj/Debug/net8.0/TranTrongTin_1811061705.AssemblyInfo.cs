@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TranTrongTin_1811061705")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9649bb9914e166b4848edbc221d6876700cf2c51")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c0a50a32e01de76505bee0827bd17b8617dc1e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("TranTrongTin_1811061705")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TranTrongTin_1811061705")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

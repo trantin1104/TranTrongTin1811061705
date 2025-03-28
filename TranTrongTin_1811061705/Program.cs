@@ -8,6 +8,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Cấu hình dịch vụ
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Session tồn tại trong 30 phút
+    options.Cookie.HttpOnly = true; // Bảo mật cookie
+    options.Cookie.IsEssential = true; // Đảm bảo session luôn hoạt động
+});
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -25,6 +33,13 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.ReturnUrlParameter = "/Product";
 });
 
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+
+});
+
+
 builder.Services.AddRazorPages();
 
 // Đăng ký Repository
@@ -40,6 +55,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseStaticFiles();
+app.UseSession();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization(); 

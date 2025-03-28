@@ -1,0 +1,22 @@
+﻿@model Order
+<h2 class="text-center mb-4">📦 Checkout</h2>
+
+<form asp-action="Checkout" method="post"> 
+
+    <div class="form-group  mb-3">
+        <label asp-for="ShippingAddress" class="form-label fw-bold">📍 Địa chỉ giao hàng</label>
+        <input asp-for="ShippingAddress" class="form-control" /> 
+    </div> 
+
+    <div class="form-group  mb-3">
+        <label asp-for="Notes" class="form-label fw-bold">📝 Ghi chú</label>
+        <textarea asp-for="Notes" class="form-control"></textarea>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <a asp-controller="ShoppingCart" asp-action="Index" class="btn btn-danger">🔙 Quay lại giỏ hàng</a>
+        <button type="submit" class="btn btn-primary">🛒 Đặt hàng ngay</button>
+    </div>
+
+
+</form> 
