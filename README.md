@@ -22,7 +22,6 @@
 ✅ Thêm sản phẩm vào giỏ hàng
 ✅ Xem danh sách sản phẩm trong giỏ hàng
 ✅ Xóa sản phẩm khỏi giỏ hàng
-✅ Cập nhật số lượng sản phẩm
 
 ### 🔐 Quản Lý Tài Khoản
 ✅ Đăng nhập, đăng xuất
